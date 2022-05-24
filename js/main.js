@@ -27,7 +27,7 @@ while (op == "si") {
   consulta = prompt("Desea saber cual es su condicion respecto a su IMC? Si/No").toLowerCase();
   while (consulta != "si" && consulta != "no") {
     alert("Ingrese Si o No");
-    sexo = prompt("Desea saber cual es su condicion respecto a su IMC? Si/No").toLowerCase();
+    consulta = prompt("Desea saber cual es su condicion respecto a su IMC? Si/No").toLowerCase();
   }
   //Obtenemos si quiere saber la condición de su IMC
   if (consulta == "si") {
