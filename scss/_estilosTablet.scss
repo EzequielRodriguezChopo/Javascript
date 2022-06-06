@@ -1,0 +1,51 @@
+
+  @media (max-width: 1024px) {
+    .alineacionHeader {
+      flex-direction: column;
+    }
+    .textheader {
+      white-space: nowrap;
+      font-size: 80px;
+      margin-left: 0vw;
+    }
+    .iconosAnimados {
+      margin-left: 0vw;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .pie {
+      font-size: 20px;
+      justify-content: center;
+    }
+    .elFooter {
+      display: flex;
+      flex-direction:column ;
+    }
+    .test {
+      display: flex;
+      flex-direction: row;
+      margin-top: 1%;  
+      margin-right: 20%;
+      padding: 0px;
+    }
+    .imgNosotros {
+      border-radius: 50px;
+    }
+    .posicionIconos {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 5vw;
+    }
+    .articulo {
+      width: 17vw;
+      margin: 10px;
+    }
+    .articulo:hover{
+
+      width: 20vw;
+      height: 200px;
+      margin: 0px;
+      padding-top: 10px;
+    }
+  }

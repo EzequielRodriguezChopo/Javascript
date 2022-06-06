@@ -1,0 +1,136 @@
+@import "colors";
+
+@mixin porcentajes ($primero,$segundo){
+  background-image: radial-gradient($color1 $primero, $color2 $segundo);
+}
+
+body {
+  background-color: $color3;
+}
+.border {
+  border: 105px;
+  border-color: $color9;
+}
+.imgenIndex { 
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 10px;
+}
+.textContacto {
+  @include porcentajes(42%,80%);
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 70px;
+  border: solid 2px $color4;
+  border-radius: 5px;
+  color: $color10;
+}
+.estilContacto {
+  @extend .textContacto;      //USO EXTENDS
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 35px;
+  padding: 30px;
+}
+.mx {
+  width: 30vw;
+  font-size: 20px;
+}
+.test {
+  @include porcentajes(42%,80%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5px;
+  border: solid 2px $color9;
+  line-height: 40px;
+  border-radius: 5px;
+}
+.botones {
+  @include porcentajes(42%,80%);
+}
+.espaciosLogin {
+  margin: 10px;
+}
+.anchoFormulario {
+  width: 100%;
+}
+.articulo {
+  width: 20vw;
+  height: 140px; 
+  margin: 10px;
+}/*
+.articulo:hover{
+
+  width: 22vw;
+  height: 180px;
+  margin: 0px;
+  padding-top: 10px;
+}*/
+.productos {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+.producto {
+  background-image: linear-gradient(270deg, $color6 40%, $color7 80%);
+  border-radius: 4px;
+  margin: 5px;
+  padding: 7px;
+  text-align: center;
+}
+.imgNosotros {
+  width: 100vw;
+  border-radius: 100px;
+}
+.estiloParrafo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 10px;
+  padding: 30px;
+  border: solid 2px $color9;
+  border-radius: 10px;
+  line-height: 40px;
+  background-image: linear-gradient(270deg, $color2 40%, $color1 80%);
+}
+.estilContacto{
+  border-radius: 20px;
+}
+.botonCarrito{
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  background-image: radial-gradient($color1 20%, $color2 70%);
+  border: 10px;
+  border-color: $color9;
+  border-radius: 5px;
+  padding-right: 45px;
+  color: $color8;
+}
+.carrito{
+  padding-top: 15px;
+}
+.carrito-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: $color8;
+  text-decoration: none;
+  text-align: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .carrito-link {
+    transition: none;
+  }
+}
+.botonCarrito:hover {
+ // border: 1px solid rgb(117, 58, 2) ;
+  color:$color9;
+}
+.bordeProducto{
+  border:2px solid rgb(117, 58, 2) ;
+}

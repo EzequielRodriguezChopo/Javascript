@@ -1,0 +1,51 @@
+@import "colors";
+nav {
+  border: solid 2px $color4;
+  border-radius: 5px;
+}
+nav {
+  margin-top: 10px;
+}
+.fondonav {
+  margin-top: 10px;
+  background-color: $color2;
+}
+.textsmall {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.textnav {
+  color: $color8;
+  background-image: radial-gradient($color1 100%, $color2 70%);
+}
+.degrade {
+  background-image: radial-gradient($color1 20%, $color2 70%);
+  border: 10px;
+  border-color: $color9;
+}
+.margin {
+  padding-right: 45px;
+}
+
+$mapa:(
+    boton1:rgb(243, 142, 47),
+    boton2:rgb(207, 106, 10),
+    boton3:rgb(238, 187, 111),
+    boton4:rgb(117, 58, 2),
+    boton5:rgb(243, 142, 47),
+);
+
+@each $nombreBoton,$colores in $mapa{
+    .#{$nombreBoton}{
+      color:$colores
+    }
+}
+.colorBoton {
+color: white;
+}
+.colorBoton:hover{
+  background-image: radial-gradient($color4 20%, $color2 70%);
+  border: 10px;
+  color: white;
+}

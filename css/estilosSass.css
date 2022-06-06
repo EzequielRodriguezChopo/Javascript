@@ -1,0 +1,455 @@
+@charset "UTF-8";
+/*Estilos del Header*/
+header {
+  border: solid 2px rgb(117, 58, 2);
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.fondoHeader {
+  background-image: radial-gradient(rgb(243, 142, 47) 20%, rgb(207, 106, 10) 70%);
+}
+
+.alineacionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.textoAnimado {
+  animation-name: texto;
+  animation-duration: 1s;
+}
+
+@keyframes texto {
+  from {
+    /*Estilos*/
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  to {
+    /*Estilos*/
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.icono {
+  border-radius: 300px;
+  width: 150px;
+  height: 150px;
+  border: 5px solid rgb(117, 58, 2);
+}
+
+.textheader {
+  white-space: nowrap;
+  font-size: 80px;
+  margin-left: 15vw;
+  color: rgb(85, 43, 4);
+}
+
+.iconosAnimados {
+  white-space: nowrap;
+  margin-left: 10vw;
+  animation-name: iconos;
+  animation-duration: 2s;
+}
+
+@keyframes iconos {
+  from {
+    /*Estilos*/
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  to {
+    /*Estilos*/
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.redes {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+/*Estilos del Nav*/
+nav {
+  border: solid 2px rgb(117, 58, 2);
+  border-radius: 5px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+.fondonav {
+  margin-top: 10px;
+  background-color: rgb(207, 106, 10);
+}
+
+.textsmall {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.textnav {
+  color: rgb(85, 43, 4);
+  background-image: radial-gradient(rgb(243, 142, 47) 100%, rgb(207, 106, 10) 70%);
+}
+
+.degrade {
+  background-image: radial-gradient(rgb(243, 142, 47) 20%, rgb(207, 106, 10) 70%);
+  border: 10px;
+  border-color: rgb(0, 0, 0);
+}
+
+.margin {
+  padding-right: 45px;
+}
+
+.boton1 {
+  color: rgb(243, 142, 47);
+}
+
+.boton2 {
+  color: rgb(207, 106, 10);
+}
+
+.boton3 {
+  color: rgb(238, 187, 111);
+}
+
+.boton4 {
+  color: rgb(117, 58, 2);
+}
+
+.boton5 {
+  color: rgb(243, 142, 47);
+}
+
+.colorBoton {
+  color: white;
+}
+
+.colorBoton:hover {
+  background-image: radial-gradient(rgb(117, 58, 2) 20%, rgb(207, 106, 10) 70%);
+  border: 10px;
+  color: white;
+}
+
+/*Estilos del Main*/
+body {
+  background-color: rgb(238, 187, 111);
+}
+
+.border {
+  border: 105px;
+  border-color: rgb(0, 0, 0);
+}
+
+.imgenIndex {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 10px;
+}
+
+.textContacto, .estilContacto {
+  background-image: radial-gradient(rgb(243, 142, 47) 42%, rgb(207, 106, 10) 80%);
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 70px;
+  border: solid 2px rgb(117, 58, 2);
+  border-radius: 5px;
+  color: rgb(56, 28, 2);
+}
+
+.estilContacto {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 35px;
+  padding: 30px;
+}
+
+.mx {
+  width: 30vw;
+  font-size: 20px;
+}
+
+.test {
+  background-image: radial-gradient(rgb(243, 142, 47) 42%, rgb(207, 106, 10) 80%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5px;
+  border: solid 2px rgb(0, 0, 0);
+  line-height: 40px;
+  border-radius: 5px;
+}
+
+.botones {
+  background-image: radial-gradient(rgb(243, 142, 47) 42%, rgb(207, 106, 10) 80%);
+}
+
+.espaciosLogin {
+  margin: 10px;
+}
+
+.anchoFormulario {
+  width: 100%;
+}
+
+.articulo {
+  width: 20vw;
+  height: 140px;
+  margin: 10px;
+}
+
+/*
+.articulo:hover{
+
+  width: 22vw;
+  height: 180px;
+  margin: 0px;
+  padding-top: 10px;
+}*/
+.productos {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.producto {
+  background-image: linear-gradient(270deg, rgb(224, 130, 42) 40%, rgb(245, 160, 80) 80%);
+  border-radius: 4px;
+  margin: 5px;
+  padding: 7px;
+  text-align: center;
+}
+
+.imgNosotros {
+  width: 100vw;
+  border-radius: 100px;
+}
+
+.estiloParrafo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 10px;
+  padding: 30px;
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 10px;
+  line-height: 40px;
+  background-image: linear-gradient(270deg, rgb(207, 106, 10) 40%, rgb(243, 142, 47) 80%);
+}
+
+.estilContacto {
+  border-radius: 20px;
+}
+
+.botonCarrito {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  background-image: radial-gradient(rgb(243, 142, 47) 20%, rgb(207, 106, 10) 70%);
+  border: 10px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding-right: 45px;
+  color: rgb(85, 43, 4);
+}
+
+.carrito {
+  padding-top: 15px;
+}
+
+.carrito-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgb(85, 43, 4);
+  text-decoration: none;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrito-link {
+    transition: none;
+  }
+}
+.botonCarrito:hover {
+  color: rgb(0, 0, 0);
+}
+
+.bordeProducto {
+  border: 2px solid rgb(117, 58, 2);
+}
+
+/*Estilos del Footer*/
+.textfooter {
+  color: rgb(85, 43, 4);
+  background-image: linear-gradient(rgb(207, 106, 10) 30%, rgb(243, 142, 47) 80%);
+  /*white-space: nowrap;*/
+}
+
+.elFooter {
+  font-size: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.pie {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+}
+
+.posicionIconos {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 10vw;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 8px;
+  justify-content: end;
+}
+
+.redesFooter {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+/*Estilos tamaño Tablet*/
+@media (max-width: 1024px) {
+  .alineacionHeader {
+    flex-direction: column;
+  }
+
+  .textheader {
+    white-space: nowrap;
+    font-size: 80px;
+    margin-left: 0vw;
+  }
+
+  .iconosAnimados {
+    margin-left: 0vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .pie {
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  .elFooter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .test {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    margin-right: 20%;
+    padding: 0px;
+  }
+
+  .imgNosotros {
+    border-radius: 50px;
+  }
+
+  .posicionIconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5vw;
+  }
+
+  .articulo {
+    width: 17vw;
+    margin: 10px;
+  }
+
+  .articulo:hover {
+    width: 20vw;
+    height: 200px;
+    margin: 0px;
+    padding-top: 10px;
+  }
+}
+/*Estilos tamaño SmartPhone*/
+@media (max-width: 480px) {
+  .textheader {
+    white-space: nowrap;
+    font-size: 70px;
+    margin-left: 0vw;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pie {
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  .posicionIconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5vw;
+  }
+
+  .elFooter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .anchoFormulario {
+    width: 300px;
+  }
+
+  .test {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 0px;
+  }
+
+  .articulo {
+    width: 50vw;
+    margin: 10px;
+  }
+
+  .articulo:hover {
+    width: 70vw;
+    height: 180px;
+    margin: -10px;
+    padding-top: 20px;
+  }
+
+  .productos {
+    width: 90vw;
+    padding: 0;
+    margin: 4vw;
+  }
+}
+
+/*# sourceMappingURL=estilosSass.css.map */

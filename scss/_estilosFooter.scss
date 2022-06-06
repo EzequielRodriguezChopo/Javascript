@@ -1,0 +1,38 @@
+@import "colors";
+.textfooter {
+
+  color: $color8;
+  background-image: linear-gradient($color2 30%, $color5 80%);
+  /*white-space: nowrap;*/
+}
+.elFooter {
+  font-size: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.pie {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+} 
+.posicionIconos {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 10vw;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 8px;
+  
+  justify-content: end;
+}
+.redesFooter {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 1px;
+}

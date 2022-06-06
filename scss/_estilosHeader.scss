@@ -1,0 +1,68 @@
+@import "colors";
+header {
+  border: solid 2px $color4;
+  border-radius: 5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.fondoHeader {
+  background-image: radial-gradient($color1 20%, $color2 70%);
+}
+.alineacionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.textoAnimado {
+  animation-name: texto;
+  animation-duration: 1s;
+}
+@keyframes texto {
+  from/*Inicio*/ {
+    /*Estilos*/
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  to/*Final*/ {
+    /*Estilos*/
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.icono {
+  border-radius: 300px;
+  width: 150px;
+  height: 150px;
+  border: 5px solid $color4;
+}
+.textheader {
+  white-space: nowrap;
+  font-size: 80px;
+  margin-left: 15vw;
+  color: $color8;
+}
+.iconosAnimados {
+  white-space: nowrap;
+  margin-left: 10vw;
+  animation-name: iconos;
+  animation-duration: 2s;
+}
+@keyframes iconos {
+  from/*Inicio*/ {
+    /*Estilos*/
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  to/*Final*/ {
+    /*Estilos*/
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.redes {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+}
