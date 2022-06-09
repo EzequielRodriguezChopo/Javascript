@@ -266,11 +266,10 @@ body {
 }
 
 .carrito {
-  padding-top: 15px;
+  padding: 20px;
 }
 
 .carrito-link {
-  display: block;
   padding: 0.5rem 1rem;
   color: rgb(85, 43, 4);
   text-decoration: none;
@@ -381,13 +380,6 @@ body {
     width: 17vw;
     margin: 10px;
   }
-
-  .articulo:hover {
-    width: 20vw;
-    height: 200px;
-    margin: 0px;
-    padding-top: 10px;
-  }
 }
 /*Estilos tamaño SmartPhone*/
 @media (max-width: 480px) {
@@ -436,13 +428,6 @@ body {
   .articulo {
     width: 50vw;
     margin: 10px;
-  }
-
-  .articulo:hover {
-    width: 70vw;
-    height: 180px;
-    margin: -10px;
-    padding-top: 20px;
   }
 
   .productos {
