@@ -1,23 +1,7 @@
-class Productos{
-    constructor(id,nombreProducto,imagenProducto,precioProducto){
-        this.id=id;
-        this.nombreProducto=nombreProducto;
-        this.imagenProducto=imagenProducto;
-        this.precioProducto=precioProducto
-    }
-}
-const producto1 = new Productos(20201,'Trota de Ricota',"../imagenes/tortaDeRicota.jpg",900);
-const producto2 = new Productos(20202,'Galletitas',"../imagenes/galletas.jpg",200);
-const producto3 = new Productos(20203,'Chipa',"../imagenes/chipa.jpeg",250);
-const producto4 = new Productos(20204,'Cremona',"../imagenes/cremona.jpeg" ,150);
-const producto5 = new Productos(20205,'Biscochos de Grasa',"../imagenes/bizcochos.jpeg",125);
-const producto6 = new Productos(20206,'Facturas',"../imagenes/facturas.jpg",400);
-const producto7 = new Productos(20207,'Sanguches de Miga',"../imagenes/sanguchesDeMiga.jpeg",60);
-const producto8 = new Productos(20208,'Pasta Frola',"../imagenes/pastafrola.jpg",900);
-const producto9 = new Productos(20209,'Tarta de Coco',"../imagenes/tartaDeCoco.jpg",900);
-
 const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
 let carrito = [];
+ 
+
 const productosHTML = document.querySelector('#productos');   //Acá es donde vamos a mostrar el código de JS
 
 productos.forEach((elemento)=>{
@@ -42,11 +26,31 @@ productos.forEach((elemento)=>{
     productosHTML.append(item);
 })
 
+const imprimirCarrito = () => {
+  cartContainer.innerHTML = ''
+  carrito.forEach((elemento) => {
+      const cartRow = document.createElement('div')
+      cartRow.className = 'cartRow  mb-4 rounded-3 shadow-sm producto bordeProducto'
+      cartRow.innerHTML = 
+      `
+      <div class="cartImg ">
+      <img src=${elemento.imagenProducto}>
+      </div>
+      <div class="cartTitle"><span> ${elemento.nombreProducto} </span></div>
+      <div class="cartPrice"><span>$${elemento.precioProducto}</span></div>
+      `
+      cartContainer.append(cartRow)
+  })
+} 
+
+
 const agregarProducto = (e) => { 
   const productoElegido = e.target.getAttribute('data-id') // Con target accedemos al button, y con getAttribute obtenemos accedemos al atributo 'data-id'
   const producto = productos.find((producto) => producto.id ==  productoElegido)  // Buscamos en el array con find si esta mi id
   carrito.push(producto)          //Agregamos el producto al carrito
   console.log(carrito)            //Muestro mi carrito 
+  localStorage.setItem('Producto',JSON.stringify(carrito));
+  imprimirCarrito();
 }
 
 const botonesCompra = document.querySelectorAll('.botonCarrito') //Accedemos al botn por medio de las clases en comun '.botonCarrito'
@@ -54,3 +58,34 @@ botonesCompra.forEach((botonCompra) => {
     botonCompra.addEventListener('click', agregarProducto) //Al escuchar el evento 'click' se ejecuta la funcion 'agregarProducto'
 })
 
+const vaciarTodo = () =>{
+  localStorage.clear();
+  carrito=[];
+  console.log('Carrito ha sido vaciado');
+  console.log(carrito)            //Muestro mi carrito 
+}
+
+const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
+vaciarCarrito.addEventListener('click', vaciarTodo)
+
+const botonVaciar=document.createElement('div') ;
+botonVaciar.className = 'col botonVaciar';
+botonVaciar.innerHTML=`
+      <button data-id="" class="carrito-link botonCarrito"> Vaciar Carrito </button>
+`;
+vaciarCarrito.append(botonVaciar);
+
+const guardadoLocalStorage= JSON.parse(localStorage.getItem('Producto'))
+console.log('Localsotrage');
+console.log(guardadoLocalStorage);
+
+// Imprimo el carrito cada vez que se actualiza el array
+
+const cartContainer = document.querySelector('#cartContainer')
+
+
+ 
+ if(localStorage.getItem('Producto')){
+  carrito = JSON.parse(localStorage.getItem('Producto'))
+  imprimirCarrito();
+}

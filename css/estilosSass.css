@@ -436,5 +436,54 @@ body {
     margin: 4vw;
   }
 }
+/*Estilos Carrito*/
+/* CART */
+.cartContainer {
+  margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.cartRow {
+  border: 1px solid gray;
+  width: 70%;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartHeader {
+  margin-top: 50px;
+  font-size: 20px;
+  border: none;
+}
+
+.cartImg {
+  width: 15%;
+}
+
+.cartImg img {
+  width: 100%;
+}
+
+.cartTitle {
+  width: 35%;
+}
+
+.cartDesc {
+  width: 25%;
+}
+
+.cartPrice {
+  width: 25%;
+}
+
+.botonVaciar {
+  text-align: center;
+  padding-bottom: 100px;
+}
 
 /*# sourceMappingURL=estilosSass.css.map */
