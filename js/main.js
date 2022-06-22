@@ -1,5 +1,5 @@
 const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('Producto')) || []
  
 
 const productosHTML = document.querySelector('#productos');   //Acá es donde vamos a mostrar el código de JS
@@ -25,7 +25,20 @@ productos.forEach((elemento)=>{
     `;
     productosHTML.append(item);
 })
+  
+const eliminarArticulo = () => {
 
+  const botonX = document.querySelectorAll("#botonX");
+  botonX.forEach((button) => {
+    button.addEventListener("click", (e) => {
+    const item = e.target.getAttribute(`data-id`);
+    carrito = carrito.filter((e) => e.id != item);
+    e.target.parentElement.remove();
+    localStorage.setItem("Producto", JSON.stringify(carrito));
+   });
+  }); 
+ };
+ 
 const imprimirCarrito = () => {
   cartContainer.innerHTML = ''
   carrito.forEach((elemento) => {
@@ -38,9 +51,12 @@ const imprimirCarrito = () => {
       </div>
       <div class="cartTitle"><span> ${elemento.nombreProducto} </span></div>
       <div class="cartPrice"><span>$${elemento.precioProducto}</span></div>
+      <button data-id="${elemento.id}" id="botonX" class="boton4 bordeProducto">X</button> 
       `
       cartContainer.append(cartRow)
   })
+  eliminarArticulo();
+ 
 } 
 
 
@@ -62,7 +78,8 @@ const vaciarTodo = () =>{
   localStorage.clear();
   carrito=[];
   console.log('Carrito ha sido vaciado');
-  console.log(carrito)            //Muestro mi carrito 
+  console.log(carrito)            //Muestro mi carrito
+  imprimirCarrito() ;
 }
 
 const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
@@ -83,9 +100,8 @@ console.log(guardadoLocalStorage);
 
 const cartContainer = document.querySelector('#cartContainer')
 
-
- 
  if(localStorage.getItem('Producto')){
   carrito = JSON.parse(localStorage.getItem('Producto'))
   imprimirCarrito();
 }
+
