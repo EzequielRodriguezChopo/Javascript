@@ -85,6 +85,16 @@ const vaciarTodo = () =>{
 const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
 vaciarCarrito.addEventListener('click', vaciarTodo)
 
+document.querySelector('.botonVaciarCarrito').addEventListener('click',()=>{
+  Swal.fire(
+    'Haz vaciado el carrito satisfactoriamente',
+    '¿Te gustaria realizar una nueva compra?',
+    'success'
+  )
+})
+
+
+
 const botonVaciar=document.createElement('div') ;
 botonVaciar.className = 'col botonVaciar';
 botonVaciar.innerHTML=`
