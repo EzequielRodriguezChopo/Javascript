@@ -1,9 +1,16 @@
-const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
+//const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
 let carrito = JSON.parse(localStorage.getItem('Producto')) || []
- 
 
+
+fetch('../data/productos.json')
+    .then((res) => res.json())
+    .then((data) => {
+        renderizarProductos(data)
+    })
+
+const renderizarProductos = (productos) =>{
+  console.log(productos)
 const productosHTML = document.querySelector('#productos');   //Acá es donde vamos a mostrar el código de JS
-
 productos.forEach((elemento)=>{
     const item=document.createElement('div') ;
     item.className = 'col';
@@ -25,9 +32,22 @@ productos.forEach((elemento)=>{
     `;
     productosHTML.append(item);
 })
+const agregarProducto = (e) => { 
+  const productoElegido = e.target.getAttribute('data-id') // Con target accedemos al button, y con getAttribute obtenemos accedemos al atributo 'data-id'
+  const producto = productos.find((producto) => producto.id ==  productoElegido)  // Buscamos en el array con find si esta mi id
+  carrito.push(producto)          //Agregamos el producto al carrito
+  console.log(carrito)            //Muestro mi carrito 
+  localStorage.setItem('Producto',JSON.stringify(carrito));
+  imprimirCarrito();
+  Swal.fire("Haz agregado un elemeto al carrito", "¿Te gustaria seguir comprando?", "success");;
+}
+const botonesCompra = document.querySelectorAll('.botonCarrito') //Accedemos al botn por medio de las clases en comun '.botonCarrito'
+botonesCompra.forEach((botonCompra) => {
+    botonCompra.addEventListener('click', agregarProducto) //Al escuchar el evento 'click' se ejecuta la funcion 'agregarProducto'
+})
+}
   
 const eliminarArticulo = () => {
-
   const botonX = document.querySelectorAll("#botonX");
   botonX.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -35,11 +55,14 @@ const eliminarArticulo = () => {
     carrito = carrito.filter((e) => e.id != item);
     e.target.parentElement.remove();
     localStorage.setItem("Producto", JSON.stringify(carrito));
+    Swal.fire(`Haz eliminado el producto del carrito satisfactoriamente`, "¿Te gustaria seguir comprando?", "success");
    });
-  }); 
+  });
+   
  };
  
 const imprimirCarrito = () => {
+  console.log(carrito);
   cartContainer.innerHTML = ''
   carrito.forEach((elemento) => {
       const cartRow = document.createElement('div')
@@ -56,44 +79,22 @@ const imprimirCarrito = () => {
       cartContainer.append(cartRow)
   })
   eliminarArticulo();
- 
-} 
-
-
-const agregarProducto = (e) => { 
-  const productoElegido = e.target.getAttribute('data-id') // Con target accedemos al button, y con getAttribute obtenemos accedemos al atributo 'data-id'
-  const producto = productos.find((producto) => producto.id ==  productoElegido)  // Buscamos en el array con find si esta mi id
-  carrito.push(producto)          //Agregamos el producto al carrito
-  console.log(carrito)            //Muestro mi carrito 
-  localStorage.setItem('Producto',JSON.stringify(carrito));
-  imprimirCarrito();
 }
-
-const botonesCompra = document.querySelectorAll('.botonCarrito') //Accedemos al botn por medio de las clases en comun '.botonCarrito'
-botonesCompra.forEach((botonCompra) => {
-    botonCompra.addEventListener('click', agregarProducto) //Al escuchar el evento 'click' se ejecuta la funcion 'agregarProducto'
-})
 
 const vaciarTodo = () =>{
   localStorage.clear();
   carrito=[];
   console.log('Carrito ha sido vaciado');
-  console.log(carrito)            //Muestro mi carrito
-  imprimirCarrito() ;
-}
-
-const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
-vaciarCarrito.addEventListener('click', vaciarTodo)
-
-document.querySelector('.botonVaciarCarrito').addEventListener('click',()=>{
+  imprimirCarrito()
   Swal.fire(
     'Haz vaciado el carrito satisfactoriamente',
     '¿Te gustaria realizar una nueva compra?',
     'success'
-  )
-})
+  );
+}
 
-
+const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
+vaciarCarrito.addEventListener('click', vaciarTodo)
 
 const botonVaciar=document.createElement('div') ;
 botonVaciar.className = 'col botonVaciar';

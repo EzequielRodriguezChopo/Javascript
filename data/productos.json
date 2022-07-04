@@ -1,0 +1,11 @@
+[
+    { "id": 20201 , "nombreProducto": "Torta de Ricota","imagenProducto": "../imagenes/tortaDeRicota.jpg", "precioProducto": 900},
+    { "id": 20202 , "nombreProducto": "Galletitas","imagenProducto": "../imagenes/galletas.jpg", "precioProducto": 200},
+    { "id": 20203 , "nombreProducto": "Chipa","imagenProducto": "../imagenes/chipa.jpeg", "precioProducto": 250},
+    { "id": 20204 , "nombreProducto": "Cremona","imagenProducto": "../imagenes/cremona.jpeg", "precioProducto": 150},
+    { "id": 20205 , "nombreProducto": "Biscochos de Grasa","imagenProducto": "../imagenes/bizcochos.jpeg", "precioProducto": 125},
+    { "id": 20206 , "nombreProducto": "Facturas","imagenProducto": "../imagenes/facturas.jpg", "precioProducto": 400},
+    { "id": 20207 , "nombreProducto": "Sanguches de Miga","imagenProducto": "../imagenes/sanguchesDeMiga.jpeg", "precioProducto": 60},
+    { "id": 20208 , "nombreProducto": "Pasta Frola","imagenProducto": "../imagenes/pastafrola.jpg", "precioProducto": 900},
+    { "id": 20209 , "nombreProducto": "Tarta de Coco","imagenProducto": "../imagenes/tartaDeCoco.jpg", "precioProducto": 900}    
+]
