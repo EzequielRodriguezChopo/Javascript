@@ -1,6 +1,4 @@
-//const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
 let carrito = JSON.parse(localStorage.getItem('Producto')) || []
-
 
 fetch('../data/productos.json')
     .then((res) => res.json())
@@ -9,8 +7,7 @@ fetch('../data/productos.json')
     })
 
 const renderizarProductos = (productos) =>{
-  console.log(productos)
-const productosHTML = document.querySelector('#productos');   //Acá es donde vamos a mostrar el código de JS
+const productosHTML = document.querySelector('#productos');   //Acá es donde vamos a mostrar el código de JS, todos mis producto del *.json
 productos.forEach((elemento)=>{
     const item=document.createElement('div') ;
     item.className = 'col';
@@ -43,25 +40,22 @@ const agregarProducto = (e) => {
 }
 const botonesCompra = document.querySelectorAll('.botonCarrito') //Accedemos al botn por medio de las clases en comun '.botonCarrito'
 botonesCompra.forEach((botonCompra) => {
-    botonCompra.addEventListener('click', agregarProducto) //Al escuchar el evento 'click' se ejecuta la funcion 'agregarProducto'
+    botonCompra.addEventListener('click', agregarProducto) // Al escuchar el evento 'click' se ejecuta la funcion 'agregarProducto'
 })
 }
-  
-const eliminarArticulo = () => {
+const eliminarArticulo = () => {                  // Eliminamos un articulo del carrito
   const botonX = document.querySelectorAll("#botonX");
   botonX.forEach((button) => {
     button.addEventListener("click", (e) => {
-    const item = e.target.getAttribute(`data-id`);
-    carrito = carrito.filter((e) => e.id != item);
-    e.target.parentElement.remove();
-    localStorage.setItem("Producto", JSON.stringify(carrito));
-    Swal.fire(`Haz eliminado el producto del carrito satisfactoriamente`, "¿Te gustaria seguir comprando?", "success");
+      const item = e.target.getAttribute(`data-id`);
+      carrito = carrito.filter((e) => e.id != item);
+      e.target.parentElement.remove();
+      localStorage.setItem("Producto", JSON.stringify(carrito));
+      Swal.fire(`Haz eliminado el producto del carrito satisfactoriamente`, "¿Te gustaria seguir comprando?", "success");
    });
   });
-   
- };
- 
-const imprimirCarrito = () => {
+};
+const imprimirCarrito = () => {           // Mostramos las compras realizadas
   console.log(carrito);
   cartContainer.innerHTML = ''
   carrito.forEach((elemento) => {
@@ -78,10 +72,9 @@ const imprimirCarrito = () => {
       `
       cartContainer.append(cartRow)
   })
-  eliminarArticulo();
+  eliminarArticulo();jmnh
 }
-
-const vaciarTodo = () =>{
+const vaciarTodo = () =>{       // Vaciamos el carrito del 'LocaStorage'
   localStorage.clear();
   carrito=[];
   console.log('Carrito ha sido vaciado');
@@ -92,26 +85,17 @@ const vaciarTodo = () =>{
     'success'
   );
 }
-
 const vaciarCarrito = document.querySelector('.botonVaciarCarrito');  //Acedo al boton Eliminar Carrito
 vaciarCarrito.addEventListener('click', vaciarTodo)
-
 const botonVaciar=document.createElement('div') ;
 botonVaciar.className = 'col botonVaciar';
 botonVaciar.innerHTML=`
       <button data-id="" class="carrito-link botonCarrito"> Vaciar Carrito </button>
 `;
 vaciarCarrito.append(botonVaciar);
-
 const guardadoLocalStorage= JSON.parse(localStorage.getItem('Producto'))
-console.log('Localsotrage');
-console.log(guardadoLocalStorage);
-
-// Imprimo el carrito cada vez que se actualiza el array
-
 const cartContainer = document.querySelector('#cartContainer')
-
- if(localStorage.getItem('Producto')){
+if(localStorage.getItem('Producto')){
   carrito = JSON.parse(localStorage.getItem('Producto'))
   imprimirCarrito();
 }

@@ -7,5 +7,6 @@
     { "id": 20206 , "nombreProducto": "Facturas","imagenProducto": "../imagenes/facturas.jpg", "precioProducto": 400},
     { "id": 20207 , "nombreProducto": "Sanguches de Miga","imagenProducto": "../imagenes/sanguchesDeMiga.jpeg", "precioProducto": 60},
     { "id": 20208 , "nombreProducto": "Pasta Frola","imagenProducto": "../imagenes/pastafrola.jpg", "precioProducto": 900},
-    { "id": 20209 , "nombreProducto": "Tarta de Coco","imagenProducto": "../imagenes/tartaDeCoco.jpg", "precioProducto": 900}    
+    { "id": 20209 , "nombreProducto": "Tarta de Coco","imagenProducto": "../imagenes/tartaDeCoco.jpg", "precioProducto": 990}    
 ]
+
